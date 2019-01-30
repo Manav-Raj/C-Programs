@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int T;
+	scanf("%d",&T);
+	while(T--!=0)
+	{
+		int N1,N2,N3,A[10000],B[10000],C[10000],i,j,k,D[10000],item,c=0,E[100000],f=0,flag=0;
+		scanf("%d%d%d",&N1,&N2,&N3);
+		for(i=0;i<N1;i++)
+		{
+		  scanf("%d",&A[i]);	
+		}
+		for(i=0;i<N2;i++)
+		{
+		  scanf("%d",&B[i]);	
+		}
+		for(i=0;i<N3;i++)
+		{
+		  scanf("%d",&C[i]);	
+		}
+	  
+	   for(i=0;i<N1;i++)
+	   {
+	   	for(j=0;j<N2;j++)
+	   	{
+            if(A[i]==B[j])
+	        {
+	          if(D[c]!=A[i])
+			  {	
+	           D[c++]=A[i];
+	          }
+	          else
+	          {
+	          	flag=1;
+			  }
+			}
+	    }
+       }
+       for(j=0;j<c;j++)
+       {
+       	for(i=0;i<N3;i++)
+       	{
+       		if(D[j]==C[i])
+       		{
+       		  if(E[f]!=D[j])
+       		  {
+       		    E[f++]=D[j];
+			  }
+			  else
+			  {
+			  	flag=1;
+			  }
+			}
+	    }
+	   }
+	  for(i=0;i<f;i++)
+	  {
+	  	  if(E[i]!=E[i+1])
+	  	  {
+	  	    printf("%d ",E[i]);
+	      }
+	      /*else if(E[i]==E[i+1])
+	      {
+	        flag=1;
+	      }
+	      */
+      }
+      if(flag==1)
+      {
+      	printf("-1");
+	  }
+	   printf("\n");
+    }
+    getch();
+}
