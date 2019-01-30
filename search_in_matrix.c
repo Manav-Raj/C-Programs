@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	    int T;
+		scanf("%d",&T);
+		while(T--!=0)
+		{
+		  int N,M,i,j,x,Mat[100][100],flag=0;
+		  scanf("%d%d",&N,&M);
+		  for(i=0;i<N;i++)
+		  {
+		  	for(j=0;j<M;j++)
+		  	{
+		  		scanf("%d",&Mat[i][j]);
+			}
+		  }
+		  scanf("%d",&x);
+		  for(i=0;i<N;i++)
+		  {
+		  	for(j=0;j<M;j++)
+		  	{
+		  		if(Mat[i][j]==x)
+		  		{
+		  			flag=1;
+		  			break;
+				}
+				else
+				{
+					flag=0;
+				}
+			  }
+		  }
+	    if(flag==0)
+	   {
+	 	printf("0");
+	   }
+	   else
+	   {
+	 	printf("1");
+	   }
+	   printf("\n");
+   }
+   getch();
+}

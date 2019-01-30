@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int T,X,Y,P[100000],Q[100000],i,j,temp,k=0,R[100000],s;
+	scanf("%d",&T);
+	while(T--!=0)
+	{
+		scanf("%d%d",&X,&Y);
+		for(i=0;i<X;i++)
+		{
+			scanf("%d",&P[i]);
+		}
+		 for(i=0;i<Y;i++)
+		  {
+			scanf("%d",&Q[i]);
+		  }
+        for(i=0;i<X;i++)
+        {
+        	R[k]=P[i];
+        	k++;
+		}
+		for(j=0;j<Y;j++)
+        {
+        	R[k]=Q[j];
+        	k++;
+		}
+		for(i=0;i<(X+Y);i++)
+		{
+			for(j=i+1;j<(X+Y);j++)
+			{
+				if(R[i]<R[j])
+				{
+					temp=R[i];
+					R[i]=R[j];
+					R[j]=temp;
+				}
+			}
+		}
+		for(s=0;s<(X+Y);s++)
+		{
+			printf("%d ",R[s]);
+		}
+		printf("\n");
+	}
+	getch();
+}

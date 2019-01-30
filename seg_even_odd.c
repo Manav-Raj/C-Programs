@@ -1,0 +1,69 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int T;
+	scanf("%d",&T);
+	while(T--!=0)
+	{
+		int N,i,A[1000],B[1000],C[1000],k=0,l=0,j,temp,s=0;
+		scanf("%d",&N);
+		for(i=0;i<N;i++)
+		{
+			scanf("%d",&A[i]);
+		}
+		for(i=0;i<N;i++)
+		{
+			if(A[i]%2==0)
+			{
+				B[k]=A[i];
+				k++;
+			}
+			else
+			{
+				C[l]=A[i];
+				l++;
+			}
+	      }
+			for(i=0;i<k;i++)
+			{
+				for(j=i+1;j<k;j++)
+				{
+					if(B[i]>B[j])
+					{
+						temp=B[i];
+						B[i]=B[j];
+						B[j]=temp;
+					}
+			   } 
+			} 
+		   for(i=0;i<k;i++)
+		     {
+			   A[s]=B[i];
+			   s++;
+			 } 
+		   for(i=0;i<l;i++)
+			{
+				for(j=i+1;j<l;j++)
+				{
+					if(C[i]>C[j])
+					{
+						temp=C[i];
+						C[i]=C[j];
+						C[j]=temp;
+					}
+			    } 
+			}
+		  for(i=0;i<l;i++)
+			{
+			   A[s]=C[i];
+			   s++;
+			} 
+		  for(i=0;i<s;i++)
+		  {
+		  	printf("%d ",A[i]);
+		  }
+			printf("\n");
+	}
+	getch();
+}
